@@ -1,0 +1,58 @@
+print('====== \033[1;4;34mSistema e Gestão de Estoque\033[m ======')
+
+nome = input('Digite seu nome: ')
+senha = input("Para entrar, digite sua senha: ")
+senha_correta = "1225"
+
+while senha != "1225":
+    senha = input("\033[1;31mSenha incorreta! Tente novamente:\033[m ")
+
+print(f"\033[1;32mBem vindo(a) {nome}, Acesso permitido!\033[m")
+print('===== \033[1;4;36mMENU\033[m =====')
+
+pecas = ['Mouse-R$15.00 -- 15 Unidades',
+         'Teclado-R$10.00 -- 33 Unidades',
+         'CPU-R$200.00 -- 12 Unidades',
+         'Monitor-R$100.00 -- 10 Unidades',
+         'SSD-R$125.00 -- 59 Unidades']
+chat = (11991020505)
+
+
+def exibir_menu():
+    print('''[1] \033[1;33mAdicionar Produto\033[m
+[2] \033[1;33mAtualizar Produto\033[m
+[3] \033[1;33mProdutos em Estoque\033[m
+[4] \033[1;33mChat\033[m      
+[5] \033[1;33mSair do Sistema\033[m''')
+
+
+while True:
+    exibir_menu()
+
+    opcao = input('\033[1;36mEscolha uma opção:\033[m ')
+    if (opcao == '1'):
+        nova_peca = input('Cadastre um novo produto com seu valor: ')
+        pecas.append(nova_peca)
+        print(f'Lista de Produtos atualizada \033[1;32m{pecas}\033[m')
+
+    elif (opcao == '2'):
+        for i, peca in enumerate(pecas):
+            print(f'[{i}] {peca}')
+        indice = int(input('Escolha o Produto para atualizar: '))
+        if 0 <= indice < len(pecas):
+            nova_info = input('Atualize o produto em estoque: ')
+            pecas[indice] = nova_info
+            print(f'Produto atualizado: \033[1;32m{pecas}\033[m')
+        else:
+            print('\033[1;31mÍndice inválido!\033[m')
+    elif (opcao == '3'):
+        print(f'Aqui está os produtos em estoque e sua quantidade:\033[1;32m{
+              pecas}\033[m')
+
+    elif (opcao == '4'):
+        print(f'Entre em contato pelo nosso Whatsapp: \033[1;32m{chat}\033[m')
+
+    else:
+        (opcao == '5')
+        print('\033[1;34mSaindo do sistema! Volte Sempre\033[m')
+        break
