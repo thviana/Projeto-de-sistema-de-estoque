@@ -15,7 +15,7 @@ pecas = ['Mouse-R$15.00 -- 15 Unidades',
          'CPU-R$200.00 -- 12 Unidades',
          'Monitor-R$100.00 -- 10 Unidades',
          'SSD-R$125.00 -- 59 Unidades']
-chat = (11991020505)
+chat = (11991030505)
 
 
 def exibir_menu():
